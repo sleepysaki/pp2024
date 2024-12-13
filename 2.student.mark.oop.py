@@ -10,23 +10,6 @@ def set_variables():
     global student_mark
     global marking_course_id
     
-class Student:
-    def __init__(self, student_id, student_name, dob):
-        self.student_id = student_id
-        self.student_name = student_name
-        self.dob = dob
-
-    def input_number_of_students(self):
-        global number_of_students
-        number_of_students = int(input("Enter the number of students in the class: "))
-
-    def student_info(self): 
-        global student_dict
-        for i in range(number_of_students):
-            student_id = input("Enter student ID: ")
-            student_name = input("Enter student name: ")
-            dob = input("Enter student date of birth: ")
-            student_dict[student_id] = student_name, dob
     
 class Course:
     def __init__(self, course_id, course_name):
@@ -86,25 +69,6 @@ class Student:
     def student_list(self):
         print(f"Student list: {student_dict} ")
     
-    def course_info(self):
-        global course_dict
-        for i in range(number_of_courses):
-            course_id = input("Enter course ID: ")
-            course_name = input("Enter course name: ")
-            course_dict[course_id] = course_name
-    
-    def course_mark_input(self):
-        global mark_dict
-        global marking_course_id
-        global number_of_marking_courses
-        
-        number_of_marking_courses = int(input("Enter the number of courses you want to input marks: "))
-        for i in range(number_of_marking_courses):
-            marking_course_id = input("Enter the course ID that you want to input marks: ")
-            if marking_course_id in course_dict:
-                number_of_marks = int(input("Enter the number of students you want to input marks: "))
-                for i in range(number_of_marks):
-                    student_id = input("Enter student ID: ")
 class Mark:
     def __init__(self, mark):
         self.mark = mark
@@ -119,13 +83,7 @@ class Mark:
         print(f"Course list: {course_dict} ")
     
     
-class Mark:
-    def __init__(self, mark):
-        self.mark = mark
 
-def mark_list():
-    
-    listing_course_id = input("Enter the course ID that you want to list marks: ")
 course = Course(None, None)
 student = Student(None, None, None)
 mark = Mark(None)
