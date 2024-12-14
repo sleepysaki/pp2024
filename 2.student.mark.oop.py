@@ -79,8 +79,9 @@ class Mark:
             print("Course not found")
         else:
             print(f"Mark list for {listing_course_id}")
-    def course_list(self):
-        print(f"Course list: {course_dict} ")
+            for student_id, student_mark in mark_dict.items():
+                if listing_course_id in student_mark:
+                    print(f"Student ID: {student_id}, Mark: {student_mark[listing_course_id]}")
     
     
 
@@ -88,13 +89,15 @@ course = Course(None, None)
 student = Student(None, None, None)
 mark = Mark(None)
 
-mark.mark_list()
 
+student.input_number_of_students()
+student.student_info()
 course.input_number_of_courses()
 course.course_info()
 course.course_mark_input()
 
 course.course_list()
 student.student_list()
-mark_list()
+mark.mark_list()
+
 
